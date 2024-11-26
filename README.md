@@ -66,14 +66,7 @@
 
 两种字体的显示效果对比如下：
 
-<style>
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    border: none;
-  }
-</style>
-
-| Fira Code            | Cascadia Code            |
-| :------------------: | :----------------------: |
-| ![fira_code](images/fira_code.jpg) | ![cascadia_code](images/cascadia_code.jpg) |
+<table style="border-collapse: collapse; border-spacing: 0; border: none;">
+  <tr><th>Fira Code</th><th>Cascadia Code</th></tr>
+  <tr><td><img src="images/fira_code.jpg"/></td><td><img src="images/cascadia_code.jpg"/></td></tr>
+</table>
