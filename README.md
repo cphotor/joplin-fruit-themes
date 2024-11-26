@@ -66,17 +66,14 @@
 
 两种字体的显示效果对比如下：
 
-<div style="display: flex; flex-wrap:nowrap; margin-top: 1rem;">
-  <div>
-    <p style="text-align: center;"><strong>Fira Code</strong></p>
-    <img src="images/fira_code.jpg"/>
-  </div>
-  <div>
-    <p style="text-align: center;"><strong>Cascadia Code</strong></p>
-    <img src="images/cascadia_code.jpg"/>
-  </div>
-</div>
+<style>
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+  }
+</style>
 
-相对而言，Fira Code字重较轻，与思源宋体的匹配度略好一些。
-
-
+| Fira Code            | Cascadia Code            |
+| :------------------: | :----------------------: |
+| ![fira_code](images/fira_code.jpg) | ![cascadia_code](images/cascadia_code.jpg) |
