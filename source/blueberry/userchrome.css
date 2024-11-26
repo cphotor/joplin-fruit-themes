@@ -1,0 +1,278 @@
+:root {
+    /* 基本色 */
+    --color1:        #f4feff;      /* 浅色页面背景和深色背景下的浅色文字，修改此值需要同时修改userstyle.css中的--background-color */
+    --color2:        #1c386c;      /* 侧栏背景色 */
+    --color3:        #202020;      /* 浅色背景下的深色文字 */
+    --color4:        #ff793f;      /* 深色按钮背景色或浅色按钮前景色 */
+    --color5:        #7f93c5;      /* 列表当前项背景色 */
+    --color6:        var(--color1);  /* 侧栏前景色 */
+
+    /* 以下是软件定义的变量，加!important才能生效 */
+    --joplin-color:                     var(--color3) !important;  /* Joplin字体色 */
+    --joplin-divider-color:             transparent   !important;  /* 笔记列表分隔线颜色 */
+    --joplin-selected-color:            var(--color5) !important;  /* 列表当前项背景色 */
+    --joplin-color2:                    var(--color6) !important;  /* 笔记本列表折叠箭头颜色 */
+    --joplin-background-color3:         var(--color2) !important;  /* 笔记列表和工具栏背景色 */
+    --joplin-background-color-hover3:   var(--color5) !important;  /* 笔记列表和工具栏光标hover颜色 */
+    --joplin-color3:                    var(--color3) !important;  /* 工具栏图标颜色 */
+    --joplin-font-size:                 14px          !important;  /* 笔记列表字体大小 */
+    --joplin-toolbar-icon-size:         18px;                      /* 工具栏图标大小 */
+
+    /* 以下为自定义变量 */
+    --note-background-color:            var(--color1);    /* 预览窗口背景色 */
+    --note-title-background-color:      transparent;      /* 标题区背景色 */
+    --note-title-color:                 var(--color3);    /* 编辑区标题行字体色 */
+    --editor-toolbar-background-color:  transparent;      /* 编辑区工具栏背景色 */
+
+    --editor-background-color:          var(--color1);    /* 编辑窗口背景色 */
+    --editor-font-color:                var(--color3);    /* 编辑窗口字体色 */
+    --editor-header-color:              var(--color3);    /* 编辑窗口标题色 */
+    --editor-scrollbar-color:           #00000055;      /* 编辑窗口滚动条颜色 */
+    --editor-scrollbar-bgcolor:         #00000011;      /* 编辑窗口滚动条背景色 */
+
+    --sidebar-background-color:         var(--color2);    /* 侧栏背景色 */
+    --sidebar-font-color:               var(--color6);    /* 侧栏和笔记列表字体色 */
+    --sync-button-background-color:     var(--color4);    /* 同步按钮背景色 */
+    --sync-button-color:                var(--color1);    /* 同步、已处理按钮文字颜色 */
+    --aria-selected-color:              var(--color6);    /* 当前项字体色*/
+    --list-item-hover-bgcolor:          var(--color5);    /* 列表项hover背景色 */
+
+    --scrollbar-color:                  #ffffff88;      /* 侧栏滚动条颜色 */
+    --scrollbar-bgcolor:                transparent;      /* 侧栏滚动条背景色 */
+
+    --button-area-background-color:     var(--color1);    /* 按钮区域背景色 */
+    --new-note-button-bgcolor:          var(--color4);    /* 新建笔记按钮背景色 */
+    --todo-button-bgcolor:              var(--color1);    /* 新建代办事项按钮背景色 */
+    --todo-button-color:                var(--color4);    /* 新建代办事项按钮前景色 */
+    --search-box-bgcolor:               var(--color1);    /* 搜索框背景色 */
+    --search-box-color:                 var(--color4);    /* 搜索框字体颜色 */
+    --search-box-border:                var(--color4);    /* 搜索框边框色 */
+
+    --light-font-color1:                #aaa;           /* 深色背景下的浅色字体颜色 */
+    --light-font-color2:                #888;           /* 浅色背景下的浅色字体颜色 */
+
+    --outline-background-color:         var(--color2);    /* 大纲视图背景色 */
+}
+
+/*-----------------------------------------------------------------------
+ * 预览窗口
+ *---------------------------------------------------------------------*/
+/* 预览窗口 */
+.rli-editor  {
+    background-color: var(--note-background-color) !important;
+}
+
+/* 未选中笔记时的空白窗口 */
+.rli-editor>.DnUmE>div {
+    background-color: var(--note-background-color) !important;
+}
+
+/* 标题输入区 */
+.title-input {
+    background-color: var(--note-title-background-color) !important;
+    color: var(--note-title-color) !important;
+}
+
+/* 编辑区工具栏 */
+.editor-toolbar {
+    background-color: var(--editor-toolbar-background-color) !important;
+}
+
+/* 状态栏 */
+.tag-bar>div>span {
+    color: var(--light-font-color2) !important;
+}
+
+.tag-list>button {
+    background-color: var(--note-background-color) !important;
+}
+
+/*-----------------------------------------------------------------------
+ * 笔记本列表窗口（sidebar）
+ *---------------------------------------------------------------------*/
+.sidebar {
+    background-color: var(--sidebar-background-color) !important;
+}
+
+.icon-notebooks::before,                     /* “笔记本” 左侧图标 */
+i.icon-tags::before,                         /* “标签” 左侧图标 */
+.sidebar-header-container>div>span,          /* “笔记本”和“标签”*/
+.fa-plus::before,                            /* “笔记本” 右侧+号 */
+.icon-notes::before, .all-notes>.list-item,  /* “全部笔记”图标和文字 */
+[aria-selected="false"],                     /* 所有笔记本列表项 */
+.tag-label                                   /* 所有标签列表项 */
+{
+    color: var(--sidebar-font-color) !important;
+}
+
+.sidebar-header-container>div>span,          /* “笔记本”和“标签” */
+.list-item {                                 /* 笔记本列表项目 */
+    opacity: 1 !important;
+    font-size: var(--joplin-font-size) !important;
+}
+
+/* 笔记数量 */
+.note-count-label {
+    color: var(--light-font-color1);
+    opacity: 0.7;
+}
+
+/* 同步结果 */
+.sidebar>div:last-child>div>div {
+    color: var(--light-font-color1) !important;
+    opacity: 1.0 !important;
+}
+
+button:has(.icon-sync),      /* 同步按钮 */
+button:has(.icon-notebooks)  /* “已处理：……”按钮 */
+{
+    background-color: var(--sync-button-background-color) !important;
+    border-color: var(--sync-button-background-color) !important;
+}
+
+.icon-sync, .icon-sync+span, /* 同步按钮图文 */
+button>.icon-notebooks::before, button>.icon-notebooks+span /* 已处理按钮图文 */
+{
+    color: var(--sync-button-color) !important;
+}
+
+/* 当前选中项目 */
+[aria-selected="true"]>.title, .-selected>.title, .selected,
+/* “全部笔记”在选中状态会添加一个class，不同样式的class名字不同 */
+/* 以下按主题列表顺序排列，其中第八个与第二个相同 */
+.fIaKnZ, .gFQVMG, .fRjVAv, .eccejY, .eKNOvN, .bPjydP, .cDQNrK
+{
+    background-color: var(--joplin-selected-color) !important;
+    color: var(--aria-selected-color) !important;
+}
+
+.list-item-container:hover,
+.note-list-item:hover {
+    background-color: var(--list-item-hover-bgcolor) !important;
+    opacity: 0.8;
+}
+
+/*-----------------------------------------------------------------------
+ * 笔记列表窗口
+ *---------------------------------------------------------------------*/
+/* 窗口分隔条：纵向 */
+[style*="width: 10px"] {
+    background-color: var(--color2) !important;
+}
+
+/* 窗口分隔条：横向 */
+[style*="height: 10px"] {
+    background-color: var(--color2) !important;
+}
+
+/* 滚动条 */
+.folder-and-tag-list,
+[role="listbox"]
+{
+    scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
+}
+
+/* 列表项 */
+.content>.title {
+    color: var(--sidebar-font-color) !important;
+}
+
+/* 按钮区域 */
+:has(.new-note-todo-buttons)
+{
+    background-color: var(--button-area-background-color) !important;
+}
+
+/* 新建笔记按钮 */
+.new-note-button {
+    background-color: var(--new-note-button-bgcolor) !important;
+}
+
+/* 新建笔记按钮图标和文字 */
+.new-note-button>span::before,
+.new-note-button>span {
+    color: var(--sync-button-color) !important;
+}
+
+.new-todo-button, /* 新建待办事项按钮 */
+.sort-order-field-button, /* 排序方式按钮 */
+.sort-order-reverse-button /* 改变排列顺序按钮 */
+{
+    background-color: var(--todo-button-bgcolor) !important;
+    border-color: var(--new-note-button-bgcolor) !important;
+}
+
+/* 以上3个按钮的图标和文字 */
+.new-todo-button>span::before, .new-todo-button>span,
+.sort-order-field-button>span::before,
+.sort-order-reverse-button>span::before
+{
+    color: var(--todo-button-color) !important;
+}
+
+/* 搜索框 */
+.search-bar>div>input {
+    background-color: var(--search-box-bgcolor) !important;
+    color: var(--search-box-color) !important;
+    border-color: var(--search-box-border) !important;
+}
+
+/* 搜索框内部图标 */
+.icon-search::before,
+[aria-label="清除搜索"]>span::before
+{
+    color: var(--todo-button-color) !important;
+}
+
+/* 空搜索结果列表 */
+.emptylist {
+    background-color: var(--notelist-background-color) !important;
+    color: var(--color6) !important;
+}
+
+/*-----------------------------------------------------------------------
+ * 编辑窗口
+ *---------------------------------------------------------------------*/
+/* 编辑窗口 */
+.cm-editor, .codeMirrorEditor {
+    background-color: var(--editor-background-color) !important;
+    color: var(--editor-font-color) !important;
+    scrollbar-color: var(--editor-scrollbar-color) var(--editor-scrollbar-bgcolor);
+    letter-spacing: 0.06rem;
+}
+
+/* 编辑窗口标题 */
+.cm-header {
+    color: var(--editor-header-color) !important;
+}
+
+.cm-quote,        /* blockquote */
+.cm-comment,      /* 行内代码    */
+.cm-variable-2,   /* ol         */
+.cm-variable-3    /* ul         */
+{
+    color: var(--editor-font-color) !important;
+    opacity: 1.0 !important;
+}
+
+/* 代码块 */
+.cm-jn-code-block-background {
+    background-color: #ffffff88 !important;
+}
+
+.cm-comment {
+    font-size: 0.9rem !important;
+    letter-spacing: 0;
+}
+
+/* 字符串 */
+.cm-string {
+    color: green !important;
+}
+
+/*-----------------------------------------------------------------------
+ * 大纲视图区
+ *---------------------------------------------------------------------*/
+.plugin-user-webview {
+    background-color: var(--outline-background-color) !important;
+}

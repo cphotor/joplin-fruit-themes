@@ -1,0 +1,46 @@
+:root {
+    --joplin-color:             #202020 !important;           /* 字体颜色 */
+    --joplin-color-faded:       var(--joplin-color) !important; /* 折叠箭头颜色 */
+    --scrollbar-color:          #ffffff88;                    /* 滚动条颜色 */
+    --scrollbar-bgcolor:        transparent;                    /* 滚动条背景色 */
+    --item-font-size:           14px;                           /* 标题项字体大小 */
+    --item-vertical-space:      5px;                            /* 标题项垂直间距 */
+}
+
+html {
+    scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
+}
+
+body {
+    background-color: transparent;
+}
+
+.outline-content {
+    background-color: transparent;
+/*    overflow: hidden auto;  在不需要时隐藏滚动条
+    position: relative;*/
+}
+
+#header,
+.toc-item {
+    margin-bottom: var(--item-vertical-space);
+}
+
+/* 以下两块内容替换“OUTLINE”为“大纲” */
+#header  {
+    visibility: hidden;
+    position: relative;
+}
+
+#header::after {
+    content: "大纲";
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 字体大小 */
+.toc-item>span {
+    font-size: var(--item-font-size);
+}

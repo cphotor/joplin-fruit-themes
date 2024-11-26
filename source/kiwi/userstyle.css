@@ -1,0 +1,305 @@
+:root {
+    /* 以下为自定义变量 */
+    --background-color:                 #fbfbe9;           /* 背景色 */
+    --inline-code-color:                #557324;           /* 行内代码字体颜色，使用侧栏背景色 */
+    --blockquote-color:                 #55732422;         /* 引用块背景色, 使用侧栏颜色加上透明度 */
+    --highlight-bgcolor:                #87ad34a0;         /* 高亮文本背景色, 列表当前项颜色 */
+    --fore-color:                       #202020e0;         /* 正文字体颜色 */
+    --title-color:                      #000000aa;         /* 标题字体颜色 */
+    --link-color:                       #077aa8c0;         /* 链接颜色 */
+    --pre-color:                        #ffffff88;         /* 代码块背景色 */
+    --bold-color:                       var(--title-color);  /* 粗体字颜色 */
+    --scrollbar-color:                  #00000055;         /* 滚动条颜色 */
+    --scrollbar-bgcolor:                #00000011;         /* 滚动条背景色 */
+    --abc-notation-block-bgcolor:       transparent;         /* abc谱表背景色 */
+    --abc-notation-block-color:         var(--fore-color);   /* abc谱表前景色 */
+}
+
+/*----------------------------------------------------------------*/
+/* total                                                          */
+/*----------------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+    font-size: 17.5px;
+}
+
+body, td {
+    font-family: "Source Han Serif VF", "STSong", "SimSun", "Times New Roman", serif !important;
+    scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
+}
+
+body {
+    background-color: var(--background-color);
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-indent: 0;
+    line-height: 1.5em;
+    color: var(--fore-color);
+}
+
+p {
+    margin: 0;
+    text-indent: 2em;
+}
+
+/*----------------------------------------------------------------*/
+/* header                                                         */
+/*----------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6, strong, div center, caption, th, .title, dt {
+    font-family: "Source Han Sans VF", "Microsoft YaHei", "Wenquanyi Micro Hei", "STHeiti", "SimHei", "Arial", sans-serif;
+    font-weight: 500;
+    color: var(--title-color);
+    page-break-after: avoid;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 2em !important;
+    margin-bottom: 2em;
+    font-weight: 700;
+    border: none;
+}
+
+span.chapt_num {
+    display: block;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--title-color);
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+}
+
+h2, h3, h4, h5, h6 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h2+h3, h3+h4, h4+h5, h5+h6 {
+    margin-top: 0 !important;
+}
+
+h2 {
+    font-size: 1.5rem;
+    border-bottom: 1px dotted var(--title-color);
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1.1rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+/* 图形和表格标题 */
+center, caption {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/*----------------------------------------------------------------*/
+/* list                                                           */
+/*----------------------------------------------------------------*/
+ul, ol {
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    text-indent: 0;
+    padding-left: 2em;
+}
+
+li > ol, li > ul {
+    margin: 0;
+}
+
+/*ul>li {
+    list-style-type: circle;
+}*/
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+li>p {
+    text-indent: 0;
+    margin: 0;
+}
+
+ul+p, ol+p {
+    margin-top: 1rem;
+}
+
+/*----------------------------------------------------------------*/
+/* blockquote                                                     */
+/*----------------------------------------------------------------*/
+blockquote {
+    padding: .5rem !important;
+    font-size: 0.95em;
+    background-color: var(--blockquote-color);
+    color: var(--fore-color);
+    border: none;
+    opacity: 1;
+}
+
+blockquote>h6:first-child {
+    font-size: 1em;
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+}
+
+blockquote>p {
+    margin-top: 0;
+}
+
+blockquote>pre:first-child,
+blockquote>img:first-child,
+blockquote>table:first-child {
+    margin-top: 0;
+}
+
+blockquote>pre:last-child,
+blockquote>img:last-child,
+blockquote>table:last-child {
+    margin-bottom: 0;
+}
+
+/*----------------------------------------------------------------*/
+/* code                                                           */
+/*----------------------------------------------------------------*/
+code {
+    font-family: "Fira Code", "Cascadia Code", "Source Han Serif VF", monospace;
+    font-variant-ligatures: normal;
+    letter-spacing: 0;
+}
+
+pre {
+    background-color: var(--pre-color) !important;
+    padding: 0.5rem;
+    color: var(--fore-color);
+    font-size: 0.85rem;
+    line-height: 1.3em;
+}
+
+p code, td code, li code {
+    margin: 0;
+    color: var(--inline-code-color) !important;
+    background-color: inherit !important;
+    border: none !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 0;
+}
+
+/*----------------------------------------------------------------*/
+/* table                                                          */
+/*----------------------------------------------------------------*/
+table {
+    min-width: 40%;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    font-size: 0.9rem;
+}
+
+th {
+    background-color: transparent !important;
+}
+
+tr {
+    border-top: 1px solid var(--fore-color);
+    border-bottom: 1px solid var(--fore-color);
+}
+
+tr:nth-child(even) {
+    background-color: transparent !important;
+}
+
+th, td {
+    border: none !important;
+    text-align: left;
+    padding: 0.3em 0.5em;
+}
+
+td {
+    padding: 0.1rem 0.2rem !important;
+    color: var(--fore-color) !important;
+    /*opacity: 1;*/
+}
+
+table+blockquote, blockquote+table {
+    margin-top: 1rem;
+}
+/*----------------------------------------------------------------*/
+
+img {
+    border: none;
+    display: block;
+}
+
+table, pre, blockquote, img {
+    margin: 1rem auto;
+}
+
+
+em {
+    margin-right: 0.2em;
+}
+
+strong {
+    padding: 0 0.05em;
+    color: var(--bold-color);
+    font-weight: 500;
+}
+
+/* 高亮 */
+mark {
+    background-color: var(--highlight-bgcolor);
+}
+
+/* 链接 */
+a:link {
+    color: var(--link-color);
+    text-decoration: none;
+    margin-bottom: 0.1rem;
+    border: 1 solid;
+}
+
+/* 脚注上方的横线 */
+.footnotes-sep {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    margin: 2rem 0 1rem;
+}
+
+/* LaTeX 公式 */
+.katex {
+    text-indent: 0;
+    font-size: 100% !important;
+    margin: 0 0.05em;
+}
+
+/* abc 音乐块 */
+.abc-notation-block {
+    margin: 0.5rem;
+}
+
+.abc-notation-block>svg {
+    background-color: var(--abc-notation-block-bgcolor);
+    color: var(--abc-notation-block-color);
+}
