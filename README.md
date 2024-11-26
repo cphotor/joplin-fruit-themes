@@ -29,7 +29,7 @@
 - **blueberry** ![blueberry](images/blueberry.png)
 - **grape** ![grape](images/grape.png)
 - **kiwi** ![kiwi](images/kiwi.png)
-- **lime** ![lemon](images/lemon.png)
+- **lime** ![lemon](images/lime.png)
 - **orange** ![orange](images/orange.png)
 
 ## 如何安装
@@ -66,7 +66,7 @@
 
 两种字体的显示效果对比如下：
 
-<div style="display: flex; margin-top: 1rem;">
+<div style="display: flex; flex-wrap:nowrap; margin-top: 1rem;">
   <div>
     <p style="text-align: center;"><strong>Fira Code</strong></p>
     <img src="images/fira_code.jpg"/>
